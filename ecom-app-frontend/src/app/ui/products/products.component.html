@@ -1,0 +1,24 @@
+<div class="card m-5">
+  <h5 class="card-header">Products</h5>
+  <div class="card-body">
+    <h5 class="card-title">List Of Products</h5>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="row">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <th scope="row">#</th>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.quantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

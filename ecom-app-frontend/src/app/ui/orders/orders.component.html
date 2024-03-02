@@ -1,0 +1,29 @@
+<div class="card m-5">
+  <h5 class="card-header">Orders</h5>
+  <div class="card-body">
+    <h5 class="card-title">List Of Orders</h5>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="row">Ref</th>
+          <th scope="col">Date</th>
+          <th scope="col">State</th>
+          <th scope="col">Products count</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="orders$ | async as orders">
+          <tr *ngFor="let order of orders">
+            <th scope="row">{{ order.id }}</th>
+            <td>{{ order.date }}</td>
+            <td>{{ order.state }}</td>
+            <td>{{ order.productItems.length }}</td>
+            <td>
+              <button class="btn btn-primary" routerLink="/order-details/{{order.id}}"> Details </button>
+            </td>
+          </tr></ng-container
+        >
+      </tbody>
+    </table>
+  </div>
+</div>
